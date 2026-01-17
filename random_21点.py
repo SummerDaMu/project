@@ -1,5 +1,6 @@
 from random import *
-    
+from time import *
+
 '''工人A（发牌员），仅发牌，一人quantity张牌，只返回手牌。'''
 def deal_initial_cards(cards, player, pc, quantity): 
     for i in range(quantity): 
@@ -142,5 +143,6 @@ if __name__ == "__main__": # 给py文件增加一个使用开关，import时不�
     sleep(3) 
     
 input("游戏结束，请按回车键关闭窗口...")  # 等待用户回车确认
+
 
 
