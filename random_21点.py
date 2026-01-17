@@ -105,7 +105,7 @@ def greeting():
         return "晚上好！"
 
 '''工作G调度员（主函数）：play_game() -> 组装，按顺序协调所有工人工作。'''
-def play_game():
+def play_game(): #函数定义def只是"记下做法"，不执行里面的代码，在调用main()时，变量已经定义好了，参数传递正常，主函数放在最后不会影响前面函数的定义。
     cards = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"] #设置牌堆
     player = []  #给玩家准备一个牌组
     pc = []  #给玩家准备一个牌组
@@ -114,7 +114,7 @@ def play_game():
     # player = ["A","Q"] 调试用，玩家blackjack牌组
     # pc = [9,"Q"] 调试电脑明牌代码用
     print("="*100)
-    hello = greeting() + "我的好兄弟！欢迎来到21点比赛现场！"
+    hello = greeting() + "老伙计！欢迎来到21点比赛现场！"
     hello_center = hello.center(80,"=") #将问候语居中
     print(hello_center)
     rule = input("你玩过21点吗？(Y/N): ".center(93,"=")).strip().lower() 
@@ -128,10 +128,10 @@ def play_game():
         sleep(4)
         print("3.我们的目标是：比比谁更大！分别计算你和电脑手牌的总点数，更接近21点的获胜！但是要小心哦，一旦超过21点就要爆牌啦！")
         sleep(4)        
-        print("4.哦，对了。如果你开局两张牌直接21点，那就是超幸运的“Blackjack”！有小彩蛋哦！")
+        print("4.哦，对了。如果你开局两张牌直接21点，那就是超幸运的“Blackjack”！")
         sleep(4)             
-    print("\n好哒！我想你应该准备好了，那我们现在就开始吧！\n赢了会有夸夸，输了也有鼓励哦～！一起奔着21点出发吧！好兄弟！↖(^ω^)↗\n")
-    sleep(3)  # 暂停3秒，时间可调整
+    print("\n好哒！我想你应该准备好了，那我们现在就开始吧！\n赢了会有夸夸，输了也有鼓励哦～！一起奔着21点出发吧！↖(^ω^)↗\n")
+    sleep(1.5)  # 暂停3秒，时间可调整
     print("="*100)  
     print("现在开始发牌，每位玩家各获得两张初始手牌🃏。")
     print("发牌中" + "."*95)
@@ -194,12 +194,12 @@ def play_game():
 '''需要运行封装好的主函数main()，增加一个再玩一次的选项'''
 if __name__ == "__main__": # 给py文件增加一个使用开关，import时不会自动运行
     game_result = play_game()
-    play_again = input("\n是否再玩一次？(Y/N): ").strip().lower() # 询问是否再玩一次
+    play_again = input("\n要不要再玩一次？(Y/N): ").strip().lower() # 询问是否再玩一次
+    print("\n")
     while play_again == 'y':
-        print("\n" + "="*100)
-        sleep(3) 
+        sleep(1) 
         play_game()
-        play_again = input("\n是否再玩一次？(Y/N): ").strip().lower() #可以无限次数游戏
+        play_again = input("\n要不要再玩一次？(Y/N): ").strip().lower() #可以无限次数游戏
     print("游戏结束，我们下次再见！")
     sleep(1) 
     
